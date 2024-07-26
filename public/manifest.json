@@ -1,19 +1,20 @@
 {
-  "schema_version": "v1",
-  "name_for_human": "Multi-Site Torrent Search",
-  "name_for_model": "multi_site_torrent_search",
-  "description_for_human": "Search for torrents across multiple sites using a custom API",
-  "description_for_model": "This plugin allows searching for torrents across various sites using a custom API. It provides detailed information about each torrent including name, size, seeders, leechers, and magnet link.",
-  "auth": {
-    "type": "none"
-  },
   "api": [
     {
       "type": "openapi",
-      "url": "https://raw.githubusercontent.com/jiusheng6/lobe-chat-magnet/main/public/openapi.json"
+      "url": "https://raw.githubusercontent.com/jiusheng6/lobe-chat-magnet/main/public/openapi.json",
+      "is_user_authenticated": false
     }
   ],
-  "logo_url": "https://rw.qinzhi.xyz/jiusheng6/jiusheng/main/image/202407261528663.webp",
+  "auth": {
+    "type": "none"
+  },
   "contact_email": "2936688581@qq.com",
-  "legal_info_url": "https://qinzhiai.com"
+  "description_for_human": "Search for torrents across multiple sites using a custom API",
+  "description_for_model": "This plugin allows searching for torrents across various sites using a custom API. It provides detailed information about each torrent including name, size, seeders, leechers, and magnet link.",
+  "legal_info_url": "https://qinzhiai.com",
+  "logo_url": "https://rw.qinzhi.xyz/jiusheng6/jiusheng/main/image/202407261528663.webp",
+  "name_for_human": "Multi-Site Torrent Search",
+  "name_for_model": "multi_site_torrent_search",
+  "schema_version": "v1"
 }
