@@ -1,13 +1,13 @@
 {
   "author": "Your Name",
   "homepage": "https://github.com/jiusheng6/lobe-chat-magnet",
-  "identifier": "multi-site-search-engine",
+  "identifier": "multi-site-torrent-search",
   "manifest": "https://raw.githubusercontent.com/jiusheng6/lobe-chat-magnet/main/public/manifest.json",
   "meta": {
     "avatar": "🔍",
-    "description": "Search engine plugin using various sites",
-    "tags": ["web", "search", "multi-site"],
-    "title": "Multi-Site Search Engine"
+    "description": "Search for torrents across multiple sites using a custom API",
+    "tags": ["web", "search", "torrent", "multi-site"],
+    "title": "Multi-Site Torrent Search"
   },
   "schemaVersion": 1
 }
