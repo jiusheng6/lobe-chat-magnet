@@ -1,52 +1,40 @@
 {
-  "components": {
-    "securitySchemes": {
-      "apiAuth": {
-        "type": "apiKey",
-        "name": "X-API-KEY",
-        "in": "header"
-      }
-    }
-  },
+  "openapi": "3.0.0",
   "info": {
-    "title": "Web Search",
+    "title": "Multi-Site Search Engine",
     "version": "1.0.0"
   },
-  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://rui.youxiurui.top"
+    }
+  ],
   "paths": {
-    "/search": {
+    "/gs/mange": {
       "post": {
-        "summary": "Search Google and return top 10 results",
-        "operationId": "searchGoogle",
-        "parameters": [
-          {
-            "in": "query",
-            "name": "q",
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "description": "Search query string"
-          },
-          {
-            "in": "query",
-            "name": "gl",
-            "schema": {
-              "type": "string"
-            },
-            "required": false,
-            "description": "Google Geo location parameter"
-          },
-          {
-            "in": "query",
-            "name": "hl",
-            "schema": {
-              "type": "string"
-            },
-            "required": false,
-            "description": "Google Geo locale parameter"
+        "summary": "Perform a search using various search engines",
+        "operationId": "multiSiteSearch",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "site": {
+                    "type": "string",
+                    "description": "The search engine to use"
+                  },
+                  "query": {
+                    "type": "string",
+                    "description": "The search query"
+                  }
+                },
+                "required": ["site", "query"]
+              }
+            }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Successful search results",
@@ -54,37 +42,46 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": [
-                    "result"
-                  ],
                   "properties": {
-                    "result": {
-                      "type": "string",
-                      "description": "Top 10 search results",
-                      "example": "\"title\": \"周末游推荐\",\n\"link\": \"https://www.example.com/destinations-for-weekends\",\n\"snippet\": \"周末去哪玩?周末旅游频道,精心推荐数百个周末游经典线路\",\n\"position\": 1"
+                    "code": {
+                      "type": "integer",
+                      "description": "Response status code"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "name": { "type": "string" },
+                              "size": { "type": "string" },
+                              "seeders": { "type": "string" },
+                              "leechers": { "type": "string" },
+                              "category": { "type": "string" },
+                              "hash": { "type": "string" },
+                              "magnet": { "type": "string" },
+                              "torrent": { "type": "string" },
+                              "url": { "type": "string" },
+                              "date": { "type": "string" },
+                              "downloads": { "type": "string" }
+                            }
+                          }
+                        },
+                        "current_page": { "type": "integer" },
+                        "total_pages": { "type": "integer" },
+                        "time": { "type": "number" },
+                        "total": { "type": "integer" }
+                      }
                     }
                   }
                 }
               }
             }
           }
-        },
-        "security": [
-          {
-            "apiAuth": []
-          }
-        ]
+        }
       }
     }
-  },
-  "security": [
-    {
-      "apiAuth": []
-    }
-  ],
-  "servers": [
-    {
-      "url": "https://google.serper.dev"
-    }
-  ]
+  }
 }
