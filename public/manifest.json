@@ -12,7 +12,7 @@
   "description_for_model": "Plugin for performing searches using different search engines via a custom API.",
   "legal_info_url": "https://your-legal-info-url.com",
   "logo_url": "https://rw.qinzhi.xyz/jiusheng6/jiusheng/main/image/202407261528663.webp",
-  "name_for_human": "Multi-Site Search Engine",
-  "name_for_model": "multi-site-search-engine",
+  "name_for_human": "Multi-Site torrent Engine",
+  "name_for_model": "multi-site-torrent-search",
   "schema_version": "v1"
 }
