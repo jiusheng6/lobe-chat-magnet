@@ -1,18 +1,19 @@
 {
-  "api": {
-    "type": "openapi",
-    "url": "https://raw.githubusercontent.com/jiusheng6/lobe-chat-magnet/main/public/openapi.json",
-    "is_user_authenticated": false
-  },
+  "schema_version": "v1",
+  "name_for_human": "Multi-Site Torrent Search",
+  "name_for_model": "multi_site_torrent_search",
+  "description_for_human": "Search for torrents across multiple sites using a custom API",
+  "description_for_model": "This plugin allows searching for torrents across various sites using a custom API. It provides detailed information about each torrent including name, size, seeders, leechers, and magnet link.",
   "auth": {
     "type": "none"
   },
-  "contact_email": "2936688581@qq.com",
-  "description_for_human": "Search engine plugin using various sites",
-  "description_for_model": "Plugin for performing searches using different search engines via a custom API.",
-  "legal_info_url": "https://your-legal-info-url.com",
+  "api": [
+    {
+      "type": "openapi",
+      "url": "https://raw.githubusercontent.com/jiusheng6/lobe-chat-magnet/main/public/openapi.json"
+    }
+  ],
   "logo_url": "https://rw.qinzhi.xyz/jiusheng6/jiusheng/main/image/202407261528663.webp",
-  "name_for_human": "Multi-Site torrent Engine",
-  "name_for_model": "multi-site-torrent-search",
-  "schema_version": "v1"
+  "contact_email": "2936688581@qq.com",
+  "legal_info_url": "https://qinzhiai.com"
 }
